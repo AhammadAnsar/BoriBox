@@ -207,13 +207,13 @@ export default function App() {
     isError?: boolean;
   } | null>(null);
 
-  // First-Time Boot & Onboarding check (In Rust: invoke('check_is_first_run'))
+  // First-Time Boot & Onboarding check
   const [isSetupCompleted, setIsSetupCompleted] = useState<boolean>(() => {
     try {
-      const saved = localStorage.getItem('boribox_setup_completed');
-      return saved !== null ? saved === 'true' : true;
+      const saved = localStorage.getItem('boribox_setup_completed') || localStorage.getItem('boribox_db_setup_completed');
+      return saved !== null ? saved === 'true' : false;
     } catch {
-      return true;
+      return false;
     }
   });
 

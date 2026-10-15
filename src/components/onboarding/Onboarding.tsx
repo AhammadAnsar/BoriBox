@@ -42,21 +42,21 @@ export const Onboarding: React.FC<OnboardingProps> = ({
   const [currentStep, setCurrentStep] = useState<1 | 2 | 3>(1);
 
   // Step 1: Pharmacy Details & Dynamic Logo
-  const [pharmacyName, setPharmacyName] = useState('জনতা মডেল ফার্মেসি');
-  const [ownerName, setOwnerName] = useState('মো. সাব্বির হোসেন');
-  const [drugLicenseNo, setDrugLicenseNo] = useState('DL-DHK-2026-8819');
-  const [address, setAddress] = useState('হাউস #১২, রোড #৪, ধানমন্ডি, ঢাকা-১২০৫');
-  const [pharmacyPhone, setPharmacyPhone] = useState('01711223344');
+  const [pharmacyName, setPharmacyName] = useState('');
+  const [ownerName, setOwnerName] = useState('');
+  const [drugLicenseNo, setDrugLicenseNo] = useState('');
+  const [address, setAddress] = useState('');
+  const [pharmacyPhone, setPharmacyPhone] = useState('');
   const [printerPaperWidth, setPrinterPaperWidth] = useState<'80mm' | '58mm'>('80mm');
   const [pharmacyLogo, setPharmacyLogo] = useState<string | null>(null);
 
   // Step 2: Super Admin Setup
-  const [adminName, setAdminName] = useState('ফার্মাসিস্ট সাব্বির হোসেন');
-  const [adminUsername, setAdminUsername] = useState('admin');
-  const [adminPassword, setAdminPassword] = useState('boribox2026');
-  const [confirmPassword, setConfirmPassword] = useState('boribox2026');
-  const [adminPin, setAdminPin] = useState('1234');
-  const [adminPhone, setAdminPhone] = useState('01711223344');
+  const [adminName, setAdminName] = useState('');
+  const [adminUsername, setAdminUsername] = useState('');
+  const [adminPassword, setAdminPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [adminPin, setAdminPin] = useState('');
+  const [adminPhone, setAdminPhone] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   // Validation & status

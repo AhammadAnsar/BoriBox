@@ -455,7 +455,7 @@ export const dbApi = {
     } catch {
       const flag = localStorage.getItem(KEYS.SETUP_COMPLETED);
       if (flag === null) {
-        return false; // Default demo ready
+        return true; // First run required on new installation
       }
       return flag !== 'true';
     }
