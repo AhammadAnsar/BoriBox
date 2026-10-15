@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বোরিবক্স (BoriBox) - সফটওয়্যার ম্যানুয়াল ও রিডমি ডকুমেন্টেশন</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --mint: #10b981;
+      --mint-dark: #059669;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Serif Bengali', 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      padding: 3rem 2.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1.25rem;
+      filter: drop-shadow(0 8px 16px rgba(2, 132, 199, 0.15));
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-primary { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-mint { background: #d1fae5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-dark { background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.08);
+      border-color: #bae6fd;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #f0f9ff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .tech-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin-bottom: 2.5rem;
+      border: 1px solid #334155;
+    }
+
+    .command-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #0284c7;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .brand-copyright {
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Hero Header -->
+    <div class="hero">
+      <svg class="logo" viewBox="0 0 512 512" width="120" height="120">
+        <defs>
+          <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0284c7" />
+            <stop offset="100%" stop-color="#0369a1" />
+          </linearGradient>
+          <linearGradient id="mintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#10b981" />
+            <stop offset="100%" stop-color="#059669" />
+          </linearGradient>
+        </defs>
+        <path d="M 68 220 L 244 322 L 244 480 Q 244 492 232 485 L 68 390 Q 56 383 56 368 L 56 235 Q 56 220 68 220 Z" fill="url(#blueGrad)" />
+        <path d="M 268 322 L 444 220 Q 456 213 456 228 L 456 368 Q 456 383 444 390 L 280 485 Q 268 492 268 480 Z" fill="url(#mintGrad)" />
+        <path d="M 68 180 L 236 82 Q 248 75 256 80 L 256 180 L 80 270 Q 64 278 56 260 L 56 200 Q 56 187 68 180 Z" fill="#0284c7" />
+        <path d="M 444 180 L 276 82 Q 264 75 256 80 L 256 180 L 432 270 Q 448 278 456 260 L 456 200 Q 456 187 444 180 Z" fill="#10b981" />
+        <g fill="#FFFFFF">
+          <rect x="122" y="320" width="64" height="20" rx="6" />
+          <rect x="144" y="298" width="20" height="64" rx="6" />
+        </g>
+        <g fill="#FFFFFF" transform="translate(300, 290)">
+          <path d="M 42 70 C 42 40, 52 20, 70 0 C 66 22, 54 48, 42 70 Z" />
+          <path d="M 44 48 C 20 48, 0 32, 0 12 C 22 12, 38 28, 44 48 Z" />
+          <path d="M 46 36 C 68 30, 88 12, 88 -8 C 64 -6, 50 14, 46 36 Z" />
+        </g>
+        <rect x="194" y="38" width="124" height="254" rx="62" fill="#FFFFFF" />
+        <path d="M 202 100 C 202 66, 226 46, 256 46 C 286 46, 310 66, 310 100 L 310 158 L 202 158 Z" fill="#0284c7" />
+        <path d="M 202 158 L 310 158 L 310 216 C 310 250, 286 270, 256 270 C 226 270, 202 250, 202 216 Z" fill="#10b981" />
+        <path d="M 220 84 C 220 70, 230 62, 242 58 C 238 60, 230 68, 230 84 C 230 100, 230 120, 230 130 C 224 126, 220 108, 220 84 Z" fill="#FFFFFF" opacity="0.8" />
+        <line x1="202" y1="158" x2="310" y2="158" stroke="#FFFFFF" stroke-width="4" />
+      </svg>
+
+      <h1>বোরিবক্স (BoriBox)</h1>
+      <div class="subtitle">অফলাইন-ফার্স্ট স্মার্ট ফার্মেসি পিওএস, ইনভেন্টরি ও প্রেসক্রিপশন সিস্টেম</div>
+
+      <div class="badges">
+        <span class="badge badge-mint">✓ ১০০% অফলাইন সক্রিয়</span>
+        <span class="badge badge-primary">Tauri 2.0 + Rust Desktop</span>
+        <span class="badge badge-primary">SQLite FTS5 Trigram</span>
+        <span class="badge badge-dark">Argon2id Security</span>
+      </div>
+    </div>
+
+    <!-- Feature Cards Grid -->
+    <h2 class="section-title">মূল ফিচার ও সুবিধাসমূহ</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">ট্রাইগ্রাম সার্চ ইঞ্জিন</div>
+        <div class="card-desc">ভুল বানানেও ৫০,০০০+ ওষুধের তালিকা থেকে মিলি-সেকেন্ডে ওষুধ খুঁজে বের করে ক্যাশ মেমো তৈরি।</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <div class="card-title">স্মার্ট FEFO ব্যাচ ইনভেন্টরি</div>
+        <div class="card-desc">যে ব্যাচের মেয়াদ আগে শেষ তা আগে ক্যাশ কাউন্টারে বিক্রয় হয়। মেয়াদোত্তীর্ণ ও স্টক-আউট ওষুধ টেবিলের শীর্ষে পিন করা থাকে।</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">rx</div>
+        <div class="card-title">১-বিট থার্মাল প্রিন্টিং</div>
+        <div class="card-desc">ক্যানভাস থেকে ১-বিট বিটম্যাপ রাস্টারাইজেশনের মাধ্যমে যেকোনো থার্মাল প্রিন্টারে ১০০% স্পষ্ট বাংলা রিসিট।</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <div class="card-title">ডিজিডিএ কমপ্লায়েন্স</div>
+        <div class="card-desc">সরকারি রেজিস্টার অনুযায়ী অ্যান্টিবায়োটিক ও প্রেসক্রিপশন ওষুধের তথ্য নিবন্ধন ও রিপোর্ট সংরক্ষণ।</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <div class="card-title">Argon2id অফলাইন নিরাপত্তা</div>
+        <div class="card-desc">সুপার এডমিন ও ক্যাশিয়ার একাউন্টের পাসওয়ার্ড হ্যাশিং এবং ৪-সংখ্যার দ্রুত আনলক পিন।</div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📲</div>
+        <div class="card-title">এসএমএস ও ড্রাইভ ব্যাকআপ</div>
+        <div class="card-desc">কাস্টমার বকেয়া তাগাদা এসএমএস এবং এনক্রিপ্টেড গুগল ড্রাইভ অটো-ব্যাকআপ ইন্টিগ্রেশন।</div>
+      </div>
+    </div>
+
+    <!-- Architecture Section -->
+    <h2 class="section-title">প্রযুক্তি কাঠামো (Architecture)</h2>
+    <div class="tech-box">
+┌─────────────────────────────────────────────────────────┐
+│ Frontend: React 19 + TypeScript + Vite                   │
+│ Typography: Noto Serif Bengali                          │
+│ Style: Tailwind CSS + Lucide React Icons                │
+└───────────────────────────┬─────────────────────────────┘
+                            │ (Tauri IPC Bridge)
+┌───────────────────────────▼─────────────────────────────┐
+│ Core Desktop Backend: Tauri 2.0 (Rust)                 │
+│ Storage Engine: SQLite 3 with FTS5 Trigram Search       │
+│ Security Level: Argon2id Password Hashing               │
+│ Hardware Support: USB / Serial ESC/POS Rasterizer       │
+└─────────────────────────────────────────────────────────┘
+    </div>
+
+    <!-- Installation Section -->
+    <h2 class="section-title">কমান্ড ও প্রজেক্ট রান নির্দেশিকা</h2>
+    <div class="command-box">$ npm install && npm run dev</div>
+    <div class="command-box">$ npx tauri icon public/boribox-icon.svg</div>
+
+    <!-- Footer -->
+    <footer>
+      <p>বোরিবক্স - ফার্মেসি ব্যবস্থাপনা সহজ ও প্রফেশনাল করার বিশ্বস্ত সমাধান</p>
+      <p class="brand-copyright">SoftDows দ্বারা তৈরিকৃত, পরিচালিত এবং স্বত্ত্ব নিয়ন্ত্রিত</p>
+    </footer>
+  </div>
+
+</body>
+</html>
