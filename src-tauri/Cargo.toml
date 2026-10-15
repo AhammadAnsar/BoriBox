@@ -3,6 +3,15 @@ name = "boribox-pharmacy"
 version = "2.4.0"
 description = "Offline-first Bengali Pharmacy POS Desktop App"
 edition = "2021"
+build = "build.rs"
+
+[[bin]]
+name = "boribox-pharmacy"
+path = "src/main.rs"
+
+[lib]
+name = "boribox_pharmacy_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
 tauri-build = { version = "2.0", features = [] }
